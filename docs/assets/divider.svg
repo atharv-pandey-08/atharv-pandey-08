@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 24" width="1000" height="24" role="img" aria-label="divider">
+  <defs><linearGradient id="l" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#e8833a" stop-opacity="0"/><stop offset="0.3" stop-color="#e8833a"/><stop offset="0.7" stop-color="#e8833a"/><stop offset="1" stop-color="#e8833a" stop-opacity="0"/>
+  </linearGradient></defs>
+  <rect x="0" y="11" width="1000" height="1.4" fill="url(#l)"/>
+  <!-- A four-point compass star in the middle -->
+  <path d="M500 1 L504 10 L513 12 L504 14 L500 23 L496 14 L487 12 L496 10 Z" fill="#e8833a" stroke="#0d0f13" stroke-width="1"/>
+</svg>

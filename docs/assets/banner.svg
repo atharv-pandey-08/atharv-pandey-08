@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" width="1000" height="300" role="img" aria-label="Atharv Pandey: first-year Software Engineering student at the University of Waterloo">
+  <style>
+    .spin { transform-origin: 820px 128px; animation: spin 90s linear infinite; }
+    .route { animation: route 3s linear infinite; }
+    .beam { animation: beam 7s ease-in-out infinite; transform-origin: 700px 232px; }
+    .lit1 { animation: tw 3.1s ease-in-out infinite; }
+    .lit2 { animation: tw 4.3s ease-in-out infinite 1.2s; }
+    .lit3 { animation: tw 5.2s ease-in-out infinite 2.4s; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes route { to { stroke-dashoffset: -28; } }
+    @keyframes beam { 0%,100% { transform: rotate(-4deg); opacity:.55; } 50% { transform: rotate(5deg); opacity:.8; } }
+    @keyframes tw { 0%,100% { opacity:.25; } 50% { opacity:.95; } }
+    /* Respect the system "reduce motion" setting. */
+    @media (prefers-reduced-motion: reduce) {
+      .spin, .route, .beam, .lit1, .lit2, .lit3 { animation: none; }
+    }
+  </style>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d0f13"/><stop offset="0.6" stop-color="#151922"/><stop offset="1" stop-color="#1b1620"/>
+    </linearGradient>
+    <pattern id="dots" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.3" fill="#fff"/></pattern>
+    <linearGradient id="fade" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0.9"/><stop offset="0.6" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <mask id="dotmask"><rect width="1000" height="300" fill="url(#fade)"/></mask>
+    <linearGradient id="beamg" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#f4d9bd" stop-opacity="0.55"/><stop offset="1" stop-color="#f4d9bd" stop-opacity="0"/></linearGradient>
+    <linearGradient id="ember" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e8833a"/><stop offset="1" stop-color="#e8833a" stop-opacity="0"/></linearGradient>
+    <radialGradient id="vig" cx="0.5" cy="0.5" r="0.8"><stop offset="0.6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.55"/></radialGradient>
+  </defs>
+
+  <rect width="1000" height="300" fill="url(#bg)"/>
+  <!-- Comic halftone, strongest on the right -->
+  <rect width="1000" height="300" fill="url(#dots)" opacity="0.09" mask="url(#dotmask)"/>
+
+  <!-- Compass rose, slowly turning -->
+  <g class="spin" fill="none" stroke="#e8833a" opacity="0.3" stroke-width="1.4">
+    <circle cx="820" cy="128" r="104"/><circle cx="820" cy="128" r="96" stroke-width="0.6"/>
+    <path d="M820.0 36.0 L809.6 117.6 L820 128 L830.4 117.6 Z"/>
+      <path d="M912.0 128.0 L830.4 117.6 L820 128 L830.4 138.4 Z"/>
+      <path d="M820.0 220.0 L830.4 138.4 L820 128 L809.6 138.4 Z"/>
+      <path d="M728.0 128.0 L809.6 138.4 L820 128 L809.6 117.6 Z"/>
+      <path d="M820 128 L860.3 87.7" stroke-width="1"/>
+      <path d="M820 128 L860.3 168.3" stroke-width="1"/>
+      <path d="M820 128 L779.7 168.3" stroke-width="1"/>
+      <path d="M820 128 L779.7 87.7" stroke-width="1"/>
+  </g>
+
+  <!-- Searchlight beam from a rooftop -->
+  <path class="beam" d="M700 232 L650 -20 L750 -20 Z" fill="url(#beamg)"/>
+
+  <!-- Dotted route ending in an X -->
+  <path class="route" d="M 40 270 C 230 220, 330 255, 470 232 S 700 190, 790 214" fill="none" stroke="#e8833a" stroke-width="2" stroke-dasharray="7 7" opacity="0.8"/>
+  <g stroke="#e8833a" stroke-width="3" stroke-linecap="round"><path d="M783 207 L797 221"/><path d="M797 207 L783 221"/></g>
+
+  <!-- Rune strip -->
+  <g fill="none" stroke="#e8833a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.55">
+    <path transform="translate(40 32)" d="M0 0 V18 M0 4 L7 -2 M0 10 L7 4"/>
+    <path transform="translate(60 32)" d="M0 0 V18 M0 9 L-6 2 M0 9 L6 2"/>
+    <path transform="translate(80 32)" d="M0 0 V18 M0 0 L-6 7 M0 0 L6 7"/>
+    <path transform="translate(100 32)" d="M0 0 V18 M0 0 L7 4 L0 9 L7 14 L0 18"/>
+    <path transform="translate(120 32)" d="M7 0 L0 9 L7 18"/>
+    <path transform="translate(140 32)" d="M0 9 L6 3 L12 9 L6 15 Z M0 18 L6 15 L12 18"/>
+    <path transform="translate(160 32)" d="M0 0 V18 M0 4 L7 -2 M0 10 L7 4"/>
+    <path transform="translate(180 32)" d="M0 0 V18 M0 9 L-6 2 M0 9 L6 2"/>
+    <path transform="translate(200 32)" d="M0 0 V18 M0 0 L-6 7 M0 0 L6 7"/>
+    <path transform="translate(220 32)" d="M0 0 V18 M0 0 L7 4 L0 9 L7 14 L0 18"/>
+    <path transform="translate(240 32)" d="M7 0 L0 9 L7 18"/>
+    <path transform="translate(260 32)" d="M0 9 L6 3 L12 9 L6 15 Z M0 18 L6 15 L12 18"/>
+    <path transform="translate(280 32)" d="M0 0 V18 M0 4 L7 -2 M0 10 L7 4"/>
+    <path transform="translate(300 32)" d="M0 0 V18 M0 9 L-6 2 M0 9 L6 2"/>
+    <path transform="translate(320 32)" d="M0 0 V18 M0 0 L-6 7 M0 0 L6 7"/>
+    <path transform="translate(340 32)" d="M0 0 V18 M0 0 L7 4 L0 9 L7 14 L0 18"/>
+    <path transform="translate(360 32)" d="M7 0 L0 9 L7 18"/>
+    <path transform="translate(380 32)" d="M0 9 L6 3 L12 9 L6 15 Z M0 18 L6 15 L12 18"/>
+  </g>
+  <rect x="40" y="62" width="360" height="1" fill="url(#ember)"/>
+
+  <!-- Name and subtitle -->
+  <g font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+    <text x="40" y="120" textLength="520" lengthAdjust="spacing" font-size="62" font-weight="700" fill="#f2f2f4" letter-spacing="1">ATHARV PANDEY</text>
+    <text x="42" y="154" textLength="470" lengthAdjust="spacing" font-size="20" fill="#c9ccd6">Software Engineering at the University of Waterloo</text>
+    <text x="42" y="180" textLength="360" lengthAdjust="spacing" font-size="14" fill="#8b90a0" letter-spacing="0.5">Building things I can measure and explain.</text>
+  </g>
+  <rect x="42" y="194" width="64" height="3" fill="#e8833a"/>
+
+  <!-- Gothic skyline with lit windows -->
+  <g fill="#08090c">
+    <rect x="0" y="245" width="54" height="55"/>
+    <rect x="56" y="265" width="45" height="35"/>
+    <path d="M60 265 L78.5 239 L97 265 Z"/>
+    <rect x="105" y="274" width="36" height="26"/>
+    <rect x="141" y="245" width="27" height="55"/>
+    <path d="M145 245 L154.5 222 L164 245 Z"/>
+    <rect x="172" y="245" width="31" height="55"/>
+    <rect x="203" y="250" width="44" height="50"/>
+    <path d="M207 250 L225.0 236 L243 250 Z"/>
+    <rect x="249" y="249" width="50" height="51"/>
+    <rect x="301" y="266" width="33" height="34"/>
+    <path d="M305 266 L317.5 251 L330 266 Z"/>
+    <rect x="334" y="246" width="38" height="54"/>
+    <rect x="372" y="255" width="43" height="45"/>
+    <rect x="419" y="272" width="32" height="28"/>
+    <rect x="453" y="270" width="30" height="30"/>
+    <path d="M457 270 L468.0 247 L479 270 Z"/>
+    <rect x="485" y="250" width="34" height="50"/>
+    <path d="M489 250 L502.0 234 L515 250 Z"/>
+    <rect x="523" y="250" width="38" height="50"/>
+    <rect x="561" y="242" width="28" height="58"/>
+    <rect x="593" y="270" width="37" height="30"/>
+    <path d="M597 270 L611.5 249 L626 270 Z"/>
+    <rect x="634" y="270" width="27" height="30"/>
+    <path d="M638 270 L647.5 249 L657 270 Z"/>
+    <rect x="665" y="249" width="34" height="51"/>
+    <path d="M669 249 L682.0 36 L695 249 Z"/>
+    <rect x="703" y="256" width="45" height="44"/>
+    <path d="M707 256 L725.5 42 L744 256 Z"/>
+    <rect x="750" y="243" width="46" height="57"/>
+    <rect x="800" y="244" width="28" height="56"/>
+    <rect x="832" y="212" width="26" height="88"/>
+    <path d="M836 212 L845.0 22 L854 212 Z"/>
+    <rect x="858" y="207" width="42" height="93"/>
+    <rect x="900" y="246" width="40" height="54"/>
+    <rect x="942" y="230" width="57" height="70"/>
+    <path d="M946 230 L970.5 43 L995 230 Z"/>
+    <rect x="999" y="243" width="34" height="57"/>
+  </g>
+  <rect class="lit2" x="16" y="285" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit1" x="45" y="264" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit3" x="86" y="280" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit1" x="111" y="282" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit3" x="154" y="267" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit1" x="150" y="284" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit3" x="194" y="258" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit1" x="185" y="273" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit1" x="193" y="271" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit2" x="179" y="259" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit1" x="214" y="264" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit1" x="271" y="267" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit1" x="273" y="267" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit2" x="307" y="281" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit1" x="352" y="278" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit1" x="351" y="280" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit2" x="383" y="268" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit1" x="438" y="282" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit2" x="434" y="286" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit2" x="458" y="283" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit3" x="472" y="280" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit3" x="497" y="284" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit1" x="497" y="281" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit3" x="495" y="281" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit1" x="541" y="259" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit2" x="577" y="275" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit2" x="572" y="281" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit1" x="606" y="281" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit1" x="639" y="278" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit3" x="643" y="283" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit1" x="686" y="275" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit1" x="688" y="258" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit2" x="685" y="286" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit3" x="738" y="266" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit2" x="783" y="285" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit3" x="810" y="257" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit2" x="812" y="256" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit2" x="817" y="253" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit3" x="838" y="231" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit2" x="886" y="273" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit1" x="877" y="284" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit1" x="879" y="280" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit2" x="872" y="226" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit2" x="913" y="254" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit3" x="914" y="263" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit3" x="924" y="266" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit3" x="910" y="275" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit2" x="959" y="278" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit2" x="959" y="251" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit2" x="961" y="275" width="3" height="5" fill="#f4b183"/>
+    <rect class="lit1" x="1006" y="268" width="3" height="5" fill="#f4b183"/>
+  <rect y="298" width="1000" height="2" fill="#08090c"/>
+
+  <rect width="1000" height="300" fill="url(#vig)"/>
+  <!-- Corner brackets -->
+  <g fill="none" stroke="#e8833a" stroke-width="2" opacity="0.85">
+    <path d="M10 30 V10 H30"/><path d="M970 10 H990 V30"/><path d="M10 270 V290 H30"/><path d="M990 270 V290 H970"/>
+  </g>
+</svg>
